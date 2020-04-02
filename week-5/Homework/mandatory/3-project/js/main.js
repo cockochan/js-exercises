@@ -39,19 +39,71 @@ let onGreenBtn = function (){
 }
 greenBtn.addEventListener("click", onGreenBtn);
 
-let checkMail = function(e){
-    e.event.preventDefault() 
+
+let checkMail = function(){
+   
 let exampleInputEmail1 = document.getElementById("exampleInputEmail1");
-if (exampleInputEmail1.value.length >0)
+if ((exampleInputEmail1.value.length <=0) || (!exampleInputEmail1.value.includes("@")))
 { 
     exampleInputEmail1.style.backgroundColor = ("red");
-return true;
+    return false;
 
 }
+else { 
+    exampleInputEmail1.style.backgroundColor = ("white");
+    return true;
+}
+
+
 };
 
+let checkName = function(event){
+let nameInput = document.getElementById("example-text-input");
+console.log(nameInput);
+if (nameInput.value.length <=0)
+{
+    nameInput.style.backgroundColor = ("red");
+    
+    return false;
 
-let subm = document.getElementsByClassName("btn btn-primary");
-subm[0].addEventListener("click", checkMail(e))
-console.log(checkMail());
+}
+else { 
+    nameInput.style.backgroundColor = ("white");
+    return true;
+}
 
+}
+
+let checkDescr = function(event){
+    let descrInput = document.getElementById("exampleTextarea");
+    console.log(descrInput.value);
+    if (descrInput.value.length <=0)
+    { 
+        descrInput.style.backgroundColor = ("red");
+        return false;
+    
+    }
+    else { 
+        descrInput.style.backgroundColor = ("white");
+        return true;
+    }
+    
+    }
+let checkForm = function(){
+    event.preventDefault() 
+ if(
+     checkMail()&&
+     checkName()&&
+     checkDescr())
+     {
+        alert ("thank you for filling out the form");
+       let formo =  document.querySelector("form");
+       formo.reset();
+     };
+     
+
+};
+let subm = document.querySelector("form button");
+
+subm.addEventListener("click", checkForm);
+    
