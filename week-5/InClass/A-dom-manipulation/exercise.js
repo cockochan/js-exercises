@@ -16,7 +16,8 @@ Write JavaScript below that logs:
 
 */
 
-
+let pis = document.querySelectorAll("p");
+console.log(pis);
 /*
 Task 2
 ======
@@ -24,13 +25,16 @@ Task 2
 When a user clicks the 'ALERT' button, an alert box should pop up with the text "Thanks for visiting Bikes for Refugees!"
 */
 
-
+let headdd = document.querySelector(".site-header");
+    console.log(headdd);
 /*
 Task 3
 =======
 
 Write JavaScript below that changes the background colour of the page when the 'Change colour' button is clicked.
 */
+console.log(document.getElementById("jumbotron-text"));
+
 
 
 /*
@@ -39,8 +43,14 @@ Task 4
 
 When a user clicks the 'Add some text' button, a new paragraph should be added below the buttons that says "Read more below."
 */
-
-
+let addText = document.querySelector("#addTextBtn")
+addText.addEventListener("click", function(){
+    console.log("BaniWasRight");
+})
+// document.querySelector("#addTextBtn");
+// addEventListener
+// let paragraph = document.createElement("Some appended text.");
+// myElement.appendChild("jumbotron");
 
 /*
 Task 5
